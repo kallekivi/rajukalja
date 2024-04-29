@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html>
+    
+<audio id="song1" controls>
+  <source src="song1.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio> 
+
+<audio id="song2" controls>
+  <source src="song2.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio> 
+    
 <head>
-    <title>Hello World Button</title>
+    <title>music</title>
 </head>
 <body>
 
-<h1>Hello World Button</h1>
+<h1>Musa Corner</h1>
 
 <!-- Button to trigger the "sayHello" function -->
-<button onclick="sayHello()">Click me</button>
+<button onclick="playAudio()">Click me</button>
 
 <!-- Paragraph where "Hello, world!" will be displayed -->
 <p id="output"></p>
 
 <!-- JavaScript code -->
 <script>
-    // Function to display "Hello, world!" when the button is clicked
-    function sayHello() {
-        document.getElementById("output").innerText = "Hello, world!";
-    }
+    
+  var s1 = document.getElementById("song1");
+  var s2 = document.getElementById("song2");
+  
+  function playAudio() {
+    s1.play();
+  }
+    
 </script>
 
 </body>
