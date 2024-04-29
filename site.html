@@ -1,46 +1,42 @@
 <!DOCTYPE html>
 <html>
-    
-<audio id="song1" controls>
-  <source src="song1.wav" type="audio/wav">
-  Your browser does not support the audio element.
-</audio> 
-
-<audio id="song2" controls>
-  <source src="song2.wav" type="audio/wav">
-  Your browser does not support the audio element.
-</audio> 
-
-<style>
-#audio-controls {
-  display: none;
-}
-</style>
-    
 <head>
-    <title>music</title>
+    <title>Music</title>
+    <style>
+        audio {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-
-<h1>Musa Corner</h1>
-
-<!-- Button to trigger the "sayHello" function -->
-<button onclick="playAudio()">Click me</button>
-
-<!-- Paragraph where "Hello, world!" will be displayed -->
-<p id="output"></p>
-
-<!-- JavaScript code -->
-<script>
+    <h1>Musa Corner</h1>
     
-  var s1 = document.getElementById("song1");
-  var s2 = document.getElementById("song2");
-  
-  function playAudio() {
-    s1.play();
-  }
-    
-</script>
+    <audio id="song1" controls>
+        <source src="song1.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio> 
 
+    <audio id="song2" controls>
+        <source src="song2.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio> 
+
+    <button onclick="playAudio1()">musiikki1 1</button>
+    <button onclick="playAudio2()">musiikki2 1</button>
+
+    <script>
+        // Get references to the audio elements
+        var song1 = document.getElementById("song1");
+        var song2 = document.getElementById("song2");
+        
+        // Function to play song 1
+        function playAudio1() {
+            song1.play();
+        }
+
+        function playAudio1() {
+            song2.play();
+        }
+    </script>
 </body>
 </html>
