@@ -4,24 +4,11 @@
     
     <script>
         const socket = new WebSocket("ws://localhost:1500");
-        setTimeOut();
-        
-        socket.onopen = function(event) {
-            console.log("Connected to server");
-        };
+        setTimeout();
 
-        socket.onmessage = function(event) {
-            console.log("Message from server:", event.data);
-        };
-
-        socket.onclose = function(event) {
-            console.log("Connection closed");
-        };
-
-        // Example: Sending a message to the server
         setTimeout(function() {
-            socket.send("Hello from the client!");
-        }, 1500);
+            socket.send("yo wassup");
+        }, 3000);
     </script>
     
 </body>
