@@ -3,11 +3,40 @@
 <body>
     
     <script>
+        class SquareButton {
+            constructor(x, y, char) {
+            this.x = x;
+            this.y = y;
+            this.char = char;
+            this.element = document.createElement('button');
+            this.element.classList.add('square-btn');
+            this.element.textContent = char;
+            this.element.style.position = 'absolute';
+            this.element.style.left = x + 'px';
+            this.element.style.top = y + 'px';
+            this.element.addEventListener('click', () => this.handleClick(this.char)); // Changed the event listener
+            document.body.appendChild(this.element);
+          }
+
+          handleClick(char) { // Added char parameter
+            if (connection) socket.send(char);
+            alert(`Button at (${this.x}, ${this.y}) clicked with char: ${char}!`);
+            // You can replace this alert with any function you want to call.
+          }
+        }
+
+        const myButton = new SquareButton(100, 100, 'W');
+        const myButton = new SquareButton(100, 100, 'A');
+        const myButton = new SquareButton(100, 100, 'S');
+        const myButton = new SquareButton(100, 100, 'D');
+
+         
         const socket = new WebSocket("ws://localhost:1500");
 
+        connection = false;
         socket.onopen = function(event) {
-            console.log("WebSocket connection established.");
-            socket.send("yo wassup");
+            connection = true;
+            socket.send("yo wassup bro!");
         };
 
         socket.onmessage = function(event) {
