@@ -12,9 +12,6 @@
   font-size: 20px;
 }
     </style>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 </head>
 <body>
@@ -46,11 +43,6 @@
         const ba = new SquareButton(150, 100, 'A');
         const bs = new SquareButton(200, 100, 'S');
         const bd = new SquareButton(200, 150, 'D');
-
-        //void sendSignal() {
-            //alert("fuck");
-            //socket.send("give");
-        //}
          
         const socket = new WebSocket("ws://localhost:1500");
 
@@ -64,8 +56,5 @@
             console.log("Message from server:", event.data);
         };
     </script>
-
-<button type="button" onclick="sendSignal()">Click Me!</button>
-    
 </body>
 </html>
